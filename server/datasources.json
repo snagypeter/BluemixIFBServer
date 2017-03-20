@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "MongoDB": {
+    "host": "ds137090.mlab.com",
+    "port": 37090,
+    "database": "ifb_coursera",
+    "password": "myPass",
+    "name": "MongoDB",
+    "user": "crsra",
+    "connector": "mongodb"
+  }
+}
