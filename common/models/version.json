@@ -1,0 +1,16 @@
+{
+	"name": "Version",
+	"plural": "Versions",
+	"base": "PersistedModel",
+	"strict": true,
+	"properties": {
+		"version": {
+			"type": "number",
+			"required": true
+		},
+		"migrated": {
+			"type": "date",
+			"required": true
+		}
+	}
+}

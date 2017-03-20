@@ -33,7 +33,19 @@
     "dataSource": "MongoDB",
     "public": false
   },
+  "Version": {
+    "dataSource": "MongoDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
   "Person": {
+    "dataSource": "MongoDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Division": {
     "dataSource": "MongoDB",
     "public": true,
     "$promise": {},
