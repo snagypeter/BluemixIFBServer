@@ -2,6 +2,16 @@
 
 module.exports = function (Person) {
 
+	Person.testDb = function (documentId, callback) {
+		var response = "Image";
+		callback(null, response);
+	};
+
+	Person.remoteMethod("testDb", {
+		accepts: { arg: "documentId", type: "string"},
+		returns: {arg: "data", type: "string"}
+	});
+
 	Person.myTest = function (cb) {
 		var response = "Hello callback";
 //		if(true) {
