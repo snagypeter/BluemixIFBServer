@@ -11,5 +11,14 @@
 		"name": "MongoDB",
 		"user": "crsra",
 		"connector": "mongodb"
+	},
+	"GridFS": {
+		"name": "gridfs",
+		"connector": "loopback-component-storage-gridfs",
+		"host": "ds137090.mlab.com",
+		"port": 37090,
+		"database": "ifb_coursera",
+		"username": "crsra",
+		"password": "myPass"
 	}
 }

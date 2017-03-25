@@ -4,6 +4,10 @@ module.exports = function (Person) {
 
 	Person.testDb = function (documentId, callback) {
 		var response = "Image";
+
+		var containers = FileContainer.getContainers();
+		response += containers;
+		
 		callback(null, response);
 	};
 

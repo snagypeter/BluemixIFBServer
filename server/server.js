@@ -3,6 +3,9 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 
+//var mongo = require('mongodb');
+//var grid = require('gridfs-stream');
+
 var app = module.exports = loopback();
 
 app.start = function () {
