@@ -51,7 +51,7 @@
 		"$promise": {},
 		"$resolved": true
 	},
-	"Container": {
+	"Image": {
 		"dataSource": "GridFS",
 		"public": true
 	}

@@ -1,6 +1,6 @@
 {
-	"name": "Container",
-	"plural": "Containers",
+	"name": "Image",
+	"plural": "Images",
 	"base": "Model",
 	"properties": {},
 	"validations": [
