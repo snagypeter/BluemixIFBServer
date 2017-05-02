@@ -8,8 +8,8 @@ module.exports = function (app) {
 			}
 
 			app.models.User.create([
-				{realm: "CFB", username: "admin@cfb.com", email: "admin@cfb.com", emailVerified: true, password: "1234"},
-				{realm: "CFB", username: "snp@cfb.com", email: "snp@cfb.com", emailVerified: true, password: "1234"}
+				{realm: "CFB", username: "admin@cfb.com", email: "admin@cfb.com", emailVerified: true, password: "1234", id: "5908e19099a0400038dd1d8e"},
+				{realm: "CFB", username: "snp@cfb.com", email: "snp@cfb.com", emailVerified: true, password: "1234", id: "5908e19199a0400038dd1d8f"}
 			], function (err, users) {
 				if (err) {
 					throw err;
