@@ -41,7 +41,7 @@
 	},
 	"Person": {
 		"dataSource": "MongoDB",
-		"public": false,
+		"public": true,
 		"$promise": {},
 		"$resolved": true
 	},
