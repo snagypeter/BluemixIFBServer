@@ -2,7 +2,7 @@ module.exports = function (app) {
 	function runStep() {
 		console.log("Adding default users");
 
-		app.dataSources.MongoDB.automigrate("Users", function (err) {
+		app.dataSources.MongoDB.automigrate("User", function (err) {
 			if (err) {
 				throw err;
 			}
