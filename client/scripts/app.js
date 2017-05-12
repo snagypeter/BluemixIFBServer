@@ -29,7 +29,7 @@ angular.module('companyFace', ['ui.router', 'angularModalService', 'cgBusy', 'if
 				url: 'search',
 				views: {
 					'content@': {
-						templateUrl: 'views/search.html',
+						templateUrl: 'modules/search/search.html',
 						controller: 'SearchController as ctl'
 					}
 				}
