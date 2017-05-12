@@ -5,19 +5,18 @@ module.exports = function (Image) {
 		var response = "Failed";
 
 		var fs = require("fs");
-		var outputStream = fs.createWriteStream("resize.tmp");
 		var gm = require("gm");
+		var grid = require('gridfs-stream');
+
+		var targetStream = fs.createWriteStream("resize.tmp");
+		//var gfs
 		gm(filePath)
 			.resize(512, 512)
-			.write(outputStream,
+			.write(targetStream,
 				function (error) {
 					if (error) {
 						console.log("Done with error:" + error);
 					}
-
-					var inputStream = fs.createReadStream("resize.tmp");
-					var inputFile = Image.createFile(inputStream);
-					inputFile.save();
 				});
 
 

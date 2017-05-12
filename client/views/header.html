@@ -1,0 +1,49 @@
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Company Face</a>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="mainNavbar">
+			<ul class="nav navbar-nav" ng-controller="MenuController">
+				<li ng-class="{ active: isSelected('/')}">
+					<a ui-sref="app">
+						<span class="glyphicon glyphicon-home"></span>
+						Home
+					</a>
+				</li>
+				<li ng-class="{ active: isSelected('/search')}">
+					<a ui-sref="app.search">
+						<span class="glyphicon glyphicon-search"></span>
+						Search
+					</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right" ng-controller="ProfileController as ctl">
+				<li ng-hide="ctl.isAuthenticated()">
+					<a ng-click="ctl.login()">
+						<span class="glyphicon glyphicon-log-in"></span>
+						Sign In
+					</a>
+				</li>
+				<li ng-show="ctl.isAuthenticated()">
+					<a ng-click="ctl.showProfileDetails(0)">
+						<span class="glyphicon glyphicon-user"></span>
+						Profile
+					</a>
+				</li>
+				<li ng-show="ctl.isAuthenticated()">
+					<a ng-click="ctl.logout()">
+						<span class="glyphicon glyphicon-log-out"></span>
+						Sign Out
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</nav>

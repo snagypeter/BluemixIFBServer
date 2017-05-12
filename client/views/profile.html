@@ -1,0 +1,57 @@
+<div id="personModal" class="modal fade" role="dialog">
+	<!--
+		DO NOT PUT ANYTHING OUTSIDE THIS DIV
+	Copyright (c) 2017 Peter SOLYOM-NAGY <info@snp.hu>
+	-->
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form class="form-horizontal" role="form">
+				<div class="modal-header">
+					<button type="button" class="close" ng-click="closeProfileForm()" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Profile</h4>
+				</div>
+				<div class="modal-body">
+					<div class="media row">
+						<div class="media-left">
+							<div class=" col col-xs-3">								
+								<img class="media-object" src="images/person.jpg" alt="John Doe" style="height:200px;">
+							</div>
+						</div>
+						<div class="media-body">
+							<div class="col col-xs-11">
+								<div class="form-group">
+									<label for="firstName">
+										<strong>First name</strong>
+									</label>
+									<input type="text" class="form-control" id="firstName" placeholder="First Name" ng-model="profile.firstName">
+								</div>
+								<div class="form-group">
+									<label for="lastName">
+										<strong>Last name</strong>
+									</label>
+									<input type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model="profile.lastName">
+								</div>
+								<div class="form-group">
+									<label for="department">
+										<strong>Department</strong>
+									</label>
+									<select class="form-control" id="department" ng-model="profile.department" ng-options="item.name for item in departments"></select>
+								</div>
+								<div class="form-group">
+									<label for="phone">
+										<strong>Phone</strong>
+									</label>
+									<input type="text" class="form-control" id="phone" placeholder="Phone" ng-model="profile.phone">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" ng-click="updateProfile()" data-dismiss="modal">Save</button>
+					<button type="button" class="btn btn-default" ng-click="closeProfile()" data-dismiss="modal">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

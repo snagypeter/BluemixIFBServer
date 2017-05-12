@@ -1,0 +1,88 @@
+<div id="personModal" class="modal fade" role="dialog">
+	<!--
+		DO NOT PUT ANYTHING OUTSIDE THIS DIV
+	Copyright (c) 2017 Peter SOLYOM-NAGY <info@snp.hu>
+	-->
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="ctl.closeForm()" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Person</h4>
+			</div>
+			<div class="modal-body">
+				<div cg-busy="ctl.defaultPromise"></div>
+				<form name="personDetails" role="form">
+					<div class="media">
+						<div class="media-left col-xs-4">
+							<img class="media-object img-responsive center-block" ng-src="{{ctl.personImage}}" alt="{{ctl.account.name}}">
+							<p></p>
+							<span class="btn-default btn-sm btn-block" ng-click="ctl.uploadImage()" ng-show="ctl.editable">Upload image</span>
+							<span class="btn-default btn-sm btn-block" ng-click="ctl.removeImage()" ng-show="ctl.editable">Remove image</span>
+							<p></p>
+							<span class="btn-default btn-sm btn-block" ng-click="ctl.changePassword()" ng-show="ctl.editable">Change password</span>
+						</div>
+						<div class="media-body">
+							<div class="form-group">
+								<label for="firstName">
+									<strong>First Name</strong>
+								</label>
+								<input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" ng-model="ctl.person.firstName" ng-readonly="!ctl.editable" required>
+								<span class="text-danger">&nbsp;<span ng-if="!personDetails.firstName.$valid">The first name is required</span></span>
+							</div>
+							<div class="form-group">
+								<label for="lastName">
+									<strong>Last Name</strong>
+								</label>
+								<input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" ng-model="ctl.person.lastName" ng-readonly="!ctl.editable" required>
+								<span class="text-danger">&nbsp;<span ng-if="!personDetails.lastName.$valid">The last name is required</span></span>
+							</div>
+							<div class="form-group">
+								<label for="title">
+									<strong>Title</strong>
+								</label>
+								<input type="text" class="form-control" id="title" name="title" placeholder="Title" ng-model="ctl.person.title" ng-readonly="!ctl.editable" required>
+								<span class="text-danger">&nbsp;<span ng-if="!personDetails.title.$valid">The title is required</span></span>
+							</div>
+							<div class="form-group">
+								<label for="department">
+									<strong>Department</strong>
+								</label>
+								<select class="form-control" id="department" name="department" ng-model="ctl.person.departmentId" ng-disabled="!ctl.editable" required>
+									<option ng-repeat="department in ctl.departments" value="{{department.id}}">{{department.name}}</option>
+								</select>
+								<span class="text-danger">&nbsp;<span ng-if="!personDetails.department.$valid">The department must be set</span></span>
+							</div>
+							<div class="form-group">
+								<label for="email">
+									<strong>Email</strong>
+								</label>
+								<input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="ctl.person.email" ng-readonly="true">
+								<span class="text-danger">&nbsp;<span ng-if="!personDetails.email.$valid">A valid email is required</span></span>
+							</div>
+							<div class="form-group">
+								<label for="phone">
+									<strong>Phone</strong>
+								</label>
+								<input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" ng-model="ctl.person.phone" ng-readonly="!ctl.editable">
+								<span class="text-danger">&nbsp;<span ng-if="!personDetails.phone.$valid">A phone number is required</span></span>
+							</div>
+							<div class="form-group">
+								<label for="comment">
+									<strong>About myself</strong>
+								</label>
+								<input type="text" class="form-control" id="comment" name="comment" ng-model="ctl.person.comment" ng-readonly="!ctl.editable">
+							</div>
+							<div class="text-danger">
+								{{ctl.errorMessage}}
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" ng-disabled="personDetails.$invalid" ng-click="ctl.save()" ng-show="ctl.editable">Save</button>
+				<button type="button" class="btn btn-default" ng-click="ctl.cancel()" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -2,16 +2,58 @@
 <!--
 Copyright (c) 2017 Peter SOLYOM-NAGY <info@snp.hu>
 -->
-
-
-
-<html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="companyFace" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="companyFace" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="companyFace" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="companyFace" class="no-js"> <!--<![endif]-->
 	<head>
-		<title>TODO supply a title</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>My AngularJS App</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.min.css">
+		<link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.min.css">
+		<link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-plain.min.css">
+		<link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
+		<link rel="stylesheet" href="app.css">
 	</head>
 	<body>
-		<div>TODO write content index.html</div>
+		<!--[if lt IE 7]>
+		    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		<div ui-view="header"></div>
+		<div ui-view="content" style="clear:both; margin-top: 60px;"></div>
+		<div ui-view="footer"></div>
+
+		<script src="bower_components/underscore/underscore.js"></script>
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+		<script src="bower_components/angular-touch/angular-touch.js"></script>
+
+		<script src="bower_components/angular-resource/angular-resource.js"></script>
+		<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="bower_components/angular-ui-router.stateHelper/statehelper.js"></script>
+		<script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>  
+		<script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+		<script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+		<script src="scripts/app.js"></script>
+		<script src="scripts/controllers.js"></script>
+		<script src="scripts/ifbCommon.js"></script>
+		<script src="scripts/ifbNetwork.js"></script>
+		<script src="scripts/ifbRepo.js"></script>
+		<script src="modules/common/imageUpload.js"></script>
+		<script src="modules/common/pleasewait.js"></script>
+		<script src="modules/login/login.js"></script>
+		<script src="modules/persons/persons.js"></script>
+		<script src="modules/register/register.js"></script>
+		<script src="modules/search/search.js"></script>
 	</body>
 </html>

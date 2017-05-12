@@ -1,0 +1,31 @@
+<div class="col-xs-12">
+
+</div>
+<div class="container">
+	<div ng-repeat="department in ctl.departments">
+		<p class="divisionHeader">
+			<span>{{department.name}}</span>
+		</p>
+		<div ng-repeat="person in ctl.persons| filter: {departmentId: department.id}">
+			<div class="panel panel-default floatingPersonPanels">
+				<div class="media">
+					<div class="media-left">
+						<img class="media-object" src="images/person.jpg" alt="John Doe" style="height:100px;">
+					</div>
+					<div class="media-body small">
+						<h4>{{person.firstName}} {{person.lastName}}</h4>
+						<p>
+							{{department.name}}<br/>
+							{{person.title}}
+						</p>
+						<div class="text-right">
+							<a class="btn btn-sm" ng-click="showPersonDetails(person.id)">
+								<span class="glyphicon glyphicon-new-window"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

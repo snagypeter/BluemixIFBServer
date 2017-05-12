@@ -1,0 +1,55 @@
+<div class="ngdialog-message">
+        <div class="">
+		<h3>Register </h3>
+        </div>
+        <div class="">&nbsp;</div>
+        <div class="">
+		<div cg-busy="ctl.defaultPromise"></div>
+		<form ng-submit="doRegister()" name="registrationForm" role="form">
+			<div class="form-group">
+				<label class="sr-only" for="email">Email address</label>
+				<input type="email" class="form-control input-sm" id="email" name="email" placeholder="Email" ng-model="ctl.registerModel.email" required>
+				<span class="text-danger">&nbsp;<span ng-if="!registrationForm.email.$valid">A valid email is required</span></span>
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="password">Password</label>
+				<input type="password" class="form-control input-sm" id="password" name="password" placeholder="Password" ng-model="ctl.password" required>
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="firstName">First Name</label>
+				<input type="text" class="form-control input-sm" id="firstName" name="firstName" placeholder="First Name" ng-model="ctl.registerModel.firstName" required>
+				<span class="text-danger">&nbsp;<span ng-if="!registrationForm.firstName.$valid">The first name is required</span></span>
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="lastName">Last Name</label>
+				<input type="text" class="form-control input-sm" id="lastName" name="lastName" placeholder="Last Name" ng-model="ctl.registerModel.lastName" required>
+				<span class="text-danger">&nbsp;<span ng-if="!registrationForm.lastName.$valid">The last name is required</span></span>
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="title">Title</label>
+				<input type="text" class="form-control input-sm" id="title" name="title" placeholder="Title" ng-model="ctl.registerModel.title" required>
+				<span class="text-danger">&nbsp;<span ng-if="!registrationForm.title.$valid">The title is required</span></span>
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="department">Department</label>
+				<select class="form-control" id="department" name="department" ng-model="ctl.registerModel.departmentId" required>
+					<option ng-repeat="department in ctl.departments" value="{{department.id}}">{{department.name}}</option>
+				</select>
+				<span class="text-danger">&nbsp;<span ng-if="!registrationForm.department.$valid">The department must be set</span></span>
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="phone">Phone</label>
+				<input type="text" class="form-control input-sm" id="phone" name="phone" placeholder="Phone" ng-model="ctl.registerModel.phone">
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="comment">About myself</label>
+				<input type="text" class="form-control" id="comment" name="comment" placeholder="About myself" ng-model="ctl.registerModel.comment">
+			</div>
+			<div class="text-danger">
+				{{ctl.errorMessage}}
+			</div>
+			<button type="button" class="btn btn-info btn-sm" ng-disabled="registrationForm.$invalid" ng-click="ctl.doRegister()">Register</button>
+			<button type="button" class="btn btn-default btn-sm" ng-click="ctl.cancel()">Cancel</button>
+		</form>
+        </div>
+</div>
